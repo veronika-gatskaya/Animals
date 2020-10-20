@@ -3,17 +3,25 @@ package animal.impl;
 import animal.Animal;
 
 public class Horse extends Animal {
-    String price;
+    private String price;
 
-    public Horse(String food, String location, Boolean isSleeping, String price) {
-        super(food, location, isSleeping);
+    public Horse(String food, String location, String price) {
+        super(food, location);
+        this.price = price;
+    }
+
+    public String getPrice() {
+        return this.price;
+    }
+
+    public void setPrice(String price) {
         this.price = price;
     }
 
     @Override
-    public void makeNoise() {
+    public void wake() {
         System.out.println("Horse is active");
-        isSleeping = false;
+        sleeping = false;
     }
 
     @Override
@@ -22,9 +30,9 @@ public class Horse extends Animal {
     }
 
     @Override
-    public Boolean sleep() {
+    public boolean sleep() {
         System.out.println("Horse is sleeping *_*");
-        Boolean isSleeping = true;
-        return isSleeping;
+        sleeping = true;
+        return sleeping;
     }
 }

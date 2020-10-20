@@ -3,12 +3,12 @@ package animal;
 public class Animal {
     private String food;
     private String location;
-    protected Boolean isSleeping;
+    protected boolean sleeping;
 
-    public Animal(String food, String location, Boolean isSleeping) {
+    public Animal(String food, String location) {
         this.food = food;
         this.location = location;
-        this.isSleeping = isSleeping;
+        sleeping = false;
     }
 
     public void setFood(String food) {
@@ -27,26 +27,26 @@ public class Animal {
         return this.location;
     }
 
-    public void setIsSleeping(Boolean isSleeping) {
-        this.isSleeping = isSleeping;
+    public void isSleeping(boolean sleeping) {
+        this.sleeping = sleeping;
     }
 
-    public Boolean getIsSleeping() {
-        return this.isSleeping;
+    public boolean isSleeping() {
+        return this.sleeping;
     }
 
-    public void makeNoise() {
+    public void wake() {
         System.out.println("Animal is active");
-        isSleeping = false;
+        sleeping = false;
     }
 
     protected void eat() {
         System.out.println("Animal is eating");
     }
 
-    public Boolean sleep() {
+    public boolean sleep() {
         System.out.println("Animal is sleeping");
-        isSleeping = true;
-        return isSleeping;
+        sleeping = true;
+        return sleeping;
     }
 }

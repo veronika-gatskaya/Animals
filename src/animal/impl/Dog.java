@@ -4,17 +4,25 @@ import animal.Animal;
 
 public class Dog extends Animal {
 
-        String color;
+        private String color;
 
-        public Dog(String food, String location, Boolean isSleeping, String color) {
-            super(food, location, isSleeping);
+        public Dog(String food, String location, String color) {
+            super(food, location);
+            this.color = color;
+        }
+
+        public String getColor() {
+            return this.color;
+        }
+
+        public void setColor(String color) {
             this.color = color;
         }
 
         @Override
-        public void makeNoise() {
+        public void wake() {
             System.out.println("Dog is active");
-            isSleeping = false;
+            sleeping = false;
         }
 
         @Override
@@ -23,10 +31,10 @@ public class Dog extends Animal {
         }
 
         @Override
-        public Boolean sleep() {
-            System.out.println("Dog is sleeping *_*");
-            Boolean isSleeping = true;
-            return isSleeping;
+        public boolean sleep() {
+            System.out.println("Dog is sleeping");
+            sleeping = true;
+            return sleeping;
         }
 }
 
