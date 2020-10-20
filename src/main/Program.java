@@ -9,17 +9,24 @@ import doctor.Doctor;
 public class Program {
     public static void main(String[] args) {
         Animal[] animals = {
-                new Cat("food for cat", "grodno", "meow"),
-                new Dog("food for dog", "grodno", "black"),
-                new Horse("food for Horse", "grodno", "100000$")
+                new Cat("food for cat", "grodno", true, "meow"),
+                new Dog("food for dog", "grodno", false, "black"),
+                new Horse("food for Horse", "grodno", false, "100000$")
         };
-
         Doctor doctor = new Doctor("Doctor Who");
+        animalsList(animals, doctor);
+    }
 
-        for(int i = 0; i < animals.length; i++) {
-            doctor.treatAnimal(animals[i]);
+    public static void animalsList(Animal[] animals, Doctor doctor) {
+        for (int i = 0; i < animals.length; i++) {
+            Boolean isSleeping = animals[i].getIsSleeping();
+            if (isSleeping == true) {
+                System.out.println("Animal has been sleeping");
+                animals[i].makeNoise();
+                doctor.treatAnimal(animals[i]);
+            } else {
+                doctor.treatAnimal(animals[i]);
+            }
         }
-
-
     }
 }

@@ -5,14 +5,15 @@ import animal.Animal;
 public class Horse extends Animal {
     String price;
 
-    public Horse(String food, String location, String price) {
-        super(food, location);
+    public Horse(String food, String location, Boolean isSleeping, String price) {
+        super(food, location, isSleeping);
         this.price = price;
     }
 
     @Override
     public void makeNoise() {
         System.out.println("Horse is active");
+        isSleeping = false;
     }
 
     @Override
@@ -21,7 +22,9 @@ public class Horse extends Animal {
     }
 
     @Override
-    public void sleep() {
-        System.out.println("Horse is sleeping");
+    public Boolean sleep() {
+        System.out.println("Horse is sleeping *_*");
+        Boolean isSleeping = true;
+        return isSleeping;
     }
 }
