@@ -1,12 +1,13 @@
-package animal.impl;
+package by.gatskaya.core.model.animal.impl;
 
-import animal.Animal;
+import by.gatskaya.core.model.animal.Animal;
+import by.gatskaya.core.model.animal.Location;
 
 public class Dog extends Animal {
 
         private String color;
 
-        public Dog(String food, String location, String color) {
+        public Dog(String food, Location location, String color) {
             super(food, location);
             this.color = color;
         }
@@ -36,5 +37,15 @@ public class Dog extends Animal {
             sleeping = true;
             return sleeping;
         }
+
+        @Override
+    public String toString() {
+            return "Dog" + color;
+        }
+
+    @Override
+    public int hashCode() {
+        return color.hashCode();
+    }
 }
 

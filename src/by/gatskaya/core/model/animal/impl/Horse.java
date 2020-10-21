@@ -1,11 +1,12 @@
-package animal.impl;
+package by.gatskaya.core.model.animal.impl;
 
-import animal.Animal;
+import by.gatskaya.core.model.animal.Animal;
+import by.gatskaya.core.model.animal.Location;
 
 public class Horse extends Animal {
     private String price;
 
-    public Horse(String food, String location, String price) {
+    public Horse(String food, Location location, String price) {
         super(food, location);
         this.price = price;
     }
@@ -34,5 +35,15 @@ public class Horse extends Animal {
         System.out.println("Horse is sleeping *_*");
         sleeping = true;
         return sleeping;
+    }
+
+    @Override
+    public String toString() {
+        return "Horse" + price;
+    }
+
+    @Override
+    public int hashCode() {
+        return price.hashCode();
     }
 }

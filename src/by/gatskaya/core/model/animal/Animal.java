@@ -1,11 +1,11 @@
-package animal;
+package by.gatskaya.core.model.animal;
 
-public class Animal {
+public abstract class Animal {
     private String food;
-    private String location;
+    private Location location;
     protected boolean sleeping;
 
-    public Animal(String food, String location) {
+    public Animal(String food, Location location) {
         this.food = food;
         this.location = location;
         sleeping = false;
@@ -19,11 +19,11 @@ public class Animal {
         return this.food;
     }
 
-    public void setLocation(String locaion) {
+    public void setLocation(Location locaion) {
         this.location = location;
     }
 
-    public String getLocation() {
+    public Location getLocation() {
         return this.location;
     }
 
@@ -48,5 +48,15 @@ public class Animal {
         System.out.println("Animal is sleeping");
         sleeping = true;
         return sleeping;
+    }
+
+    @Override
+    public String toString() {
+        return "Animal" + location;
+    }
+
+    @Override
+    public int hashCode() {
+        return location.hashCode();
     }
 }
