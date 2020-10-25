@@ -1,7 +1,9 @@
 package by.gatskaya.core.model.animal.impl;
 
 import by.gatskaya.core.model.animal.Animal;
-import by.gatskaya.core.model.animal.Location;
+import by.gatskaya.core.enums.Location;
+
+import java.util.Objects;
 
 public class Dog extends Animal {
 
@@ -39,13 +41,22 @@ public class Dog extends Animal {
         }
 
         @Override
-    public String toString() {
+        public String toString() {
             return "Dog" + color;
         }
 
-    @Override
-    public int hashCode() {
+        @Override
+        public int hashCode() {
         return color.hashCode();
     }
+
+        @Override
+        public boolean equals(Object o) {
+            if (this == o) return true;
+            if (o == null || getClass() != o.getClass()) return false;
+            if (!super.equals(o)) return false;
+            Dog dog = (Dog) o;
+            return Objects.equals(color, dog.color);
+         }
 }
 

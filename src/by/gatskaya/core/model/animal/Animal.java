@@ -1,5 +1,9 @@
 package by.gatskaya.core.model.animal;
 
+import by.gatskaya.core.enums.Location;
+
+import java.util.Objects;
+
 public abstract class Animal {
     private String food;
     private Location location;
@@ -58,5 +62,15 @@ public abstract class Animal {
     @Override
     public int hashCode() {
         return location.hashCode();
+    }
+
+    @Override
+    public boolean equals(Object o) {
+        if (this == o) return true;
+        if (o == null || getClass() != o.getClass()) return false;
+        Animal animal = (Animal) o;
+        return sleeping == animal.sleeping &&
+                Objects.equals(food, animal.food) &&
+                location == animal.location;
     }
 }

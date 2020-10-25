@@ -1,4 +1,4 @@
-package by.gatskaya.core.model.animal;
+package by.gatskaya.core.enums;
 
 public enum Location {
     GRODNO,

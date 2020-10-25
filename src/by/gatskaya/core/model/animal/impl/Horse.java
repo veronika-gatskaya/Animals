@@ -1,7 +1,7 @@
 package by.gatskaya.core.model.animal.impl;
 
 import by.gatskaya.core.model.animal.Animal;
-import by.gatskaya.core.model.animal.Location;
+import by.gatskaya.core.enums.Location;
 
 public class Horse extends Animal {
     private String price;
